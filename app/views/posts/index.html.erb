@@ -1,12 +1,9 @@
-<h1>Listing posts</h1>
+<h2>Listing posts</h2>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Message</th>
       <th>Title</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -15,10 +12,10 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.name %></td>
-        <td><%= post.message %></td>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td>
+          <strong><%= link_to "#{post.title}", post %></strong><br />
+          Posted <%= time_ago_in_words(post.created_at) + " by" + " #{post.name}" %>
+        </td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
