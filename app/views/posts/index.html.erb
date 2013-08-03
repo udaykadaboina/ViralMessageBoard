@@ -1,9 +1,10 @@
+<div class="container">
 <h2>Listing posts</h2>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -14,10 +15,10 @@
       <tr>
         <td>
           <strong><%= link_to "#{post.title}", post %></strong><br />
-          Posted <%= time_ago_in_words(post.created_at) + " by" + " #{post.name}" %>
+          <small>Posted <%= time_ago_in_words(post.created_at) + " by" + " #{post.name}" %></small>
         </td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +26,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, :class => 'btn'%>
+
+</div>
