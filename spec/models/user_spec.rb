@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   before(:each) do
   	@user = FactoryGirl.create(:user, name: "uday2", password: "secret")
-    puts @user.errors.messages
+    #puts @user.errors.messages
   end
 
   it "should not be valid without a name" do
