@@ -21,7 +21,4 @@ describe User do
   	@user.should_not be_valid
   end
 
-  def valid_attributes
-  	{:name => 'test user', :password => 'password', :email => 'email@xyz.com'}  	
-  end
 end
